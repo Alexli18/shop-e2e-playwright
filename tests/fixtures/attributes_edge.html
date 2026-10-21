@@ -1,0 +1,39 @@
+<!-- Edge cases in nopCommerce attribute markup: placeholders, disabled values, a select with only a
+     placeholder, a radio group with a disabled value, and colour squares (hidden radio, swatch label). -->
+<div class="attributes">
+<dl>
+<dt><label class="text-prompt">Size</label> <span class="required">*</span></dt>
+<dd>
+<select name="product_attribute_50_1_1" id="product_attribute_50_1_1">
+<option value="0">--- Please select ---</option>
+<option value="">Choose one</option>
+<option value="101" disabled="disabled">XS (sold out)</option>
+<option value="102">M</option>
+</select>
+</dd>
+<dt><label class="text-prompt">Engraving font</label></dt>
+<dd>
+<select name="product_attribute_50_2_2" id="product_attribute_50_2_2">
+<option value="0">--- Please select ---</option>
+</select>
+</dd>
+<dt><label class="text-prompt">Gift wrap</label> <span class="required">*</span></dt>
+<dd>
+<ul class="option-list">
+<li><input id="product_attribute_50_3_3_31" type="radio" name="product_attribute_50_3_3" value="31" disabled="disabled">
+<label for="product_attribute_50_3_3_31">Premium (unavailable)</label></li>
+<li><input id="product_attribute_50_3_3_32" type="radio" name="product_attribute_50_3_3" value="32">
+<label for="product_attribute_50_3_3_32">Plain paper</label></li>
+</ul>
+</dd>
+<dt><label class="text-prompt">Color</label> <span class="required">*</span></dt>
+<dd>
+<ul class="option-list color-squares">
+<li><label for="product_attribute_50_4_4_41"><span class="color-container" title="Red"><span class="color" style="background-color:#ff0000;">&nbsp;</span></span></label>
+<input id="product_attribute_50_4_4_41" type="radio" name="product_attribute_50_4_4" value="41" style="display:none"></li>
+<li><label for="product_attribute_50_4_4_42"><span class="color-container" title="Blue"><span class="color" style="background-color:#0000ff;">&nbsp;</span></span></label>
+<input id="product_attribute_50_4_4_42" type="radio" name="product_attribute_50_4_4" value="42" style="display:none"></li>
+</ul>
+</dd>
+</dl>
+</div>

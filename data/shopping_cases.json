@@ -1,0 +1,14 @@
+[
+  {"name": "computers-under-1500", "query": "computer", "max_price": "1500.00", "limit": 5, "seed": 17,
+   "min_results": 3},
+  {"name": "phones-under-500", "query": "phone", "max_price": "500.00", "limit": 5, "seed": 23,
+   "min_results": 3},
+  {"name": "sneakers-under-20", "query": "sneaker", "max_price": "20.00", "limit": 5, "seed": 5,
+   "min_results": 1, "smoke": true},
+  {"name": "descriptions-paging-under-50", "query": "the", "max_price": "50.00", "limit": 10, "seed": 31,
+   "search_in_descriptions": true, "min_results": 9, "min_search_pages": 2},
+  {"name": "books-random-quantity-under-30", "query": "book", "max_price": "30.00", "limit": 3, "seed": 7,
+   "search_in_descriptions": true, "max_quantity": 3, "min_results": 2},
+  {"name": "no-results", "query": "zzzzqqq", "max_price": "100.00", "limit": 5, "seed": 1,
+   "expect_empty": true}
+]

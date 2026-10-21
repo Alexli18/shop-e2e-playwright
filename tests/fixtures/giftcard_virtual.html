@@ -1,0 +1,24 @@
+<!-- Gift card fields of the live /25-virtual-gift-card (product 2). Logged-in customers get the
+     sender fields pre-filled ({{sender_name}} / {{sender_email}}). The message is optional. -->
+<div class="giftcard">
+<div>
+<label for="giftcard_{{id}}_RecipientName">Recipient's Name:</label>
+<input class="recipient-name" id="giftcard_{{id}}_RecipientName" name="giftcard_{{id}}.RecipientName" type="text" value="">
+</div>
+<div>
+<label for="giftcard_{{id}}_RecipientEmail">Recipient's Email:</label>
+<input class="recipient-email" id="giftcard_{{id}}_RecipientEmail" name="giftcard_{{id}}.RecipientEmail" type="text" value="">
+</div>
+<div>
+<label for="giftcard_{{id}}_SenderName">Your Name:</label>
+<input class="sender-name" id="giftcard_{{id}}_SenderName" name="giftcard_{{id}}.SenderName" type="text" value="{{sender_name}}">
+</div>
+<div>
+<label for="giftcard_{{id}}_SenderEmail">Your Email:</label>
+<input class="sender-email" id="giftcard_{{id}}_SenderEmail" name="giftcard_{{id}}.SenderEmail" type="text" value="{{sender_email}}">
+</div>
+<div>
+<label for="giftcard_{{id}}_Message">Message:</label>
+<textarea class="message" cols="20" id="giftcard_{{id}}_Message" name="giftcard_{{id}}.Message" rows="2"></textarea>
+</div>
+</div>

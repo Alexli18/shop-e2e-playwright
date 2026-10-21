@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!-- Page shell modeled on demowebshop.tricentis.com (nopCommerce DefaultClean theme). -->
+<html>
+<head>
+<meta charset="utf-8">
+<title>Demo Web Shop (offline fixture)</title>
+<style>
+  body { font-family: Arial, sans-serif; background: #fff; color: #333; }
+  .bar-notification { position: fixed; top: 0; left: 0; right: 0; padding: 10px; transition: opacity 150ms linear; }
+  .bar-notification.success { background: #4bb07a; }
+  .bar-notification.error { background: #e4444c; }
+  .ajax-loading-block-window { position: fixed; top: 50%; left: 50%; width: 40px; height: 40px; background: #999; }
+</style>
+</head>
+<body>
+<div class="master-wrapper-page">
+<div class="header">
+  <div class="header-logo"><a href="/">Tricentis Demo Web Shop</a></div>
+  <div class="header-links-wrapper">
+    <div class="header-links">
+      <ul>
+        {{account_links}}
+        <li id="topcartlink">
+          <a href="/cart" class="ico-cart">
+            <span class="cart-label">Shopping cart</span>
+            <span class="cart-qty">({{cart_qty}})</span>
+          </a>
+        </li>
+        <li><a href="/wishlist" class="ico-wishlist"><span class="cart-label">Wishlist</span><span class="wishlist-qty">(0)</span></a></li>
+      </ul>
+    </div>
+  </div>
+</div>
+<div class="master-wrapper-content">
+<div class="master-column-wrapper">
+<div class="center-2">
+{{body}}
+</div>
+</div>
+</div>
+</div>
+<div id="bar-notification" class="bar-notification" style="display: none;">
+  <span class="close" title="Close">&nbsp;</span>
+</div>
+<div class="ajax-loading-block-window" style="display: none;"></div>
+<script>{{script}}</script>
+</body>
+</html>

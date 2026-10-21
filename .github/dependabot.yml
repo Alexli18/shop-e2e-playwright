@@ -1,0 +1,8 @@
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+# Python dependencies are pinned with hashes in requirements*.lock, which Dependabot cannot regenerate
+# consistently; refresh them by hand (monthly, or when bumping pyproject.toml) with the uv commands in docs/running-tests.md.

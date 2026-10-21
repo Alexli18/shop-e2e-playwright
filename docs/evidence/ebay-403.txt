@@ -1,0 +1,32 @@
+Why the scenario runs on the Tricentis Demo Web Shop and not on eBay
+===================================================================
+
+Captured: 2026-10-21 (UTC), from the developer's machine (macOS), no proxy, fresh browser profile, no cookies.
+URL:      https://www.ebay.com/sch/i.html?_nkw=shoes   (an ordinary eBay search)
+
+1. Headless Playwright (Chromium 156.0.8078.4, as the test suite uses it)
+   Command (scratch script):
+     browser = chromium.launch(); response = browser.new_page().goto(URL)
+   Result (2026-10-21T11:59:16Z):
+     status      403
+     server      AkamaiGHost
+     content-type text/html
+     title       "Error Page | eBay"
+     body        "SORRY Something went wrong on our end 0.2e3ccbc7.1792583957.133e73bf Please go back and try
+                  again or go to eBay Homepage."
+   Screenshot: ebay-403.png (the page Playwright received).
+
+2. curl (no browser)
+   Command:
+     curl -sS -m 25 -o /dev/null -D - -w "HTTP %{http_code}\n" "https://www.ebay.com/sch/i.html?_nkw=shoes"
+   Result (2026-10-21T11:59:41Z, two attempts, identical):
+     HTTP/2 403
+     server: AkamaiGHost
+   (A first attempt a few seconds earlier failed with "curl: (35) Recv failure: Operation timed out".)
+
+Reading: the 403 is served by Akamai's edge (server: AkamaiGHost), not by eBay's search application. The
+reference string on the error page ("0.2e3ccbc7.<timestamp>.<id>") has the format of an Akamai reference
+number. This is Akamai bot protection rejecting automated clients (not re-checked here: how the same URL
+behaves in an interactive desktop browser). Working around it (stealth plugins, rotating proxies, solving
+challenges) would be against eBay's terms and would make the tests depend on an arms race, so the same
+scenario runs against https://demowebshop.tricentis.com, a shop published for test automation.
