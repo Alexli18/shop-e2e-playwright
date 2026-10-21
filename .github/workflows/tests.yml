@@ -84,7 +84,7 @@ jobs:
       - name: Test summary
         if: always()
         run: python .github/scripts/junit_summary.py "Unit + component (Python ${{ matrix.python-version }})"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         if: always()
         with:
           name: unit-component-py${{ matrix.python-version }}
@@ -123,7 +123,7 @@ jobs:
       - name: Test summary
         if: always()
         run: python .github/scripts/junit_summary.py "Smoke (chromium)"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         if: always()
         with:
           name: smoke-chromium
@@ -172,7 +172,7 @@ jobs:
       - name: Test summary
         if: always()
         run: python .github/scripts/junit_summary.py "E2E (${{ matrix.browser }})"
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         if: always()
         with:
           name: e2e-${{ matrix.browser }}
@@ -217,7 +217,7 @@ jobs:
           node-version: "22"
       - name: Generate the Allure HTML report
         run: npx --yes allure-commandline@2.34.0 generate allure-results --clean -o allure-report
-      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02  # v4.6.2
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9  # v7.0.2
         with:
           name: allure-report
           path: allure-report
