@@ -1,0 +1,22 @@
+<tr class="cart-item-row">
+<td class="remove-from-cart">
+<span class="td-title">Remove:</span>
+<input type="checkbox" name="removefromcart" value="{{row_id}}">
+</td>
+<td class="product">
+<a href="/{{slug}}" class="product-name">{{title}}</a>
+<div class="attributes">{{attributes}}</div>
+</td>
+<td class="unit-price nobr">
+<span class="td-title">Price:</span>
+<span class="product-unit-price">{{unit_price}}</span>
+</td>
+<td class="qty nobr">
+<span class="td-title">Qty.:</span>
+<input name="itemquantity{{row_id}}" type="text" value="{{quantity}}" class="qty-input">
+</td>
+<td class="subtotal nobr end">
+<span class="td-title">Total:</span>
+<span class="product-subtotal">{{line_total}}</span>
+</td>
+</tr>

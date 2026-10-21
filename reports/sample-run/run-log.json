@@ -1,0 +1,152 @@
+[
+  {
+    "time": "2026-10-21T15:59:36+00:00",
+    "event": "case",
+    "name": "computers-under-1500",
+    "query": "computer",
+    "max_price": "1500.00",
+    "limit": 5,
+    "seed": 17,
+    "in_descriptions": false,
+    "max_quantity": 1
+  },
+  {
+    "time": "2026-10-21T15:59:40+00:00",
+    "event": "authenticated",
+    "mode": "registered new user",
+    "email": "qa_246fd788@example.com"
+  },
+  {
+    "time": "2026-10-21T15:59:42+00:00",
+    "event": "search",
+    "query": "computer",
+    "max_price": "1500.00",
+    "limit": 5,
+    "in_descriptions": false,
+    "pages": [
+      1
+    ],
+    "found": [
+      {
+        "title": "Build your own cheap computer",
+        "url": "https://demowebshop.tricentis.com/build-your-cheap-own-computer",
+        "price": "800.00"
+      },
+      {
+        "title": "Build your own computer",
+        "url": "https://demowebshop.tricentis.com/build-your-own-computer",
+        "price": "1200.00"
+      },
+      {
+        "title": "Simple Computer",
+        "url": "https://demowebshop.tricentis.com/simple-computer",
+        "price": "800.00"
+      }
+    ]
+  },
+  {
+    "time": "2026-10-21T15:59:45+00:00",
+    "event": "add_to_cart",
+    "item": {
+      "url": "https://demowebshop.tricentis.com/build-your-cheap-own-computer",
+      "title": "Build your own cheap computer",
+      "status": "added",
+      "options": {
+        "Processor": "Fast [+100.00]",
+        "RAM": "2 GB",
+        "HDD": "400 GB [+100.00]"
+      },
+      "message": "The product has been added to your shopping cart",
+      "text_fields": {},
+      "quantity": 1,
+      "page_price": "800.00"
+    },
+    "cart_counter": 1,
+    "screenshot": "02-added-build-your-own-cheap-computer.png"
+  },
+  {
+    "time": "2026-10-21T15:59:47+00:00",
+    "event": "add_to_cart",
+    "item": {
+      "url": "https://demowebshop.tricentis.com/build-your-own-computer",
+      "title": "Build your own computer",
+      "status": "added",
+      "options": {
+        "Processor": "2.5 GHz Intel Pentium Dual-Core E2200 [+15.00]",
+        "RAM": "4GB [+20.00]",
+        "HDD": "320 GB",
+        "OS": "Windows 10 [+60.00]",
+        "Software": "Microsoft Office [+50.00]"
+      },
+      "message": "The product has been added to your shopping cart",
+      "text_fields": {},
+      "quantity": 1,
+      "page_price": "1200.00"
+    },
+    "cart_counter": 2,
+    "screenshot": "03-added-build-your-own-computer.png"
+  },
+  {
+    "time": "2026-10-21T15:59:51+00:00",
+    "event": "add_to_cart",
+    "item": {
+      "url": "https://demowebshop.tricentis.com/simple-computer",
+      "title": "Simple Computer",
+      "status": "added",
+      "options": {
+        "Processor": "Slow",
+        "RAM": "8 GB [+60.00]",
+        "HDD": "320 GB"
+      },
+      "message": "The product has been added to your shopping cart",
+      "text_fields": {},
+      "quantity": 1,
+      "page_price": "800.00"
+    },
+    "cart_counter": 3,
+    "screenshot": "04-added-simple-computer.png"
+  },
+  {
+    "time": "2026-10-21T15:59:52+00:00",
+    "event": "cart",
+    "entries": [
+      {
+        "title": "Build your own cheap computer",
+        "quantity": 1,
+        "unit_price": "1000.00",
+        "line_total": "1000.00",
+        "attributes": {
+          "Processor": "Fast [+100.00]",
+          "RAM": "2 GB",
+          "HDD": "400 GB [+100.00]"
+        }
+      },
+      {
+        "title": "Build your own computer",
+        "quantity": 1,
+        "unit_price": "1345.00",
+        "line_total": "1345.00",
+        "attributes": {
+          "Processor": "2.5 GHz Intel Pentium Dual-Core E2200 [+15.00]",
+          "RAM": "4GB [+20.00]",
+          "HDD": "320 GB",
+          "OS": "Windows 10 [+60.00]",
+          "Software": "Microsoft Office [+50.00]"
+        }
+      },
+      {
+        "title": "Simple Computer",
+        "quantity": 1,
+        "unit_price": "860.00",
+        "line_total": "860.00",
+        "attributes": {
+          "Processor": "Slow",
+          "RAM": "8 GB [+60.00]",
+          "HDD": "320 GB"
+        }
+      }
+    ],
+    "sub_total": "3205.00",
+    "threshold": "4500.00"
+  }
+]

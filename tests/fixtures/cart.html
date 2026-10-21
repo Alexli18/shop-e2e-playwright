@@ -1,0 +1,82 @@
+<!-- /cart body with items, modeled on the live cart (rows + totals table). -->
+<div class="page shopping-cart-page">
+<div class="page-title"><h1>Shopping cart</h1></div>
+<div class="page-body">
+<div class="order-summary-content">
+<form action="/cart" enctype="multipart/form-data" method="post" novalidate="novalidate">
+<table class="cart">
+<thead>
+<tr class="cart-header-row"><th>Remove</th><th>Product(s)</th><th>Price</th><th>Qty.</th><th class="end">Total</th></tr>
+</thead>
+<tbody>
+{{rows}}
+</tbody>
+</table>
+<div class="buttons"><div class="common-buttons">
+<input type="submit" name="updatecart" value="Update shopping cart" class="button-2 update-cart-button">
+<input type="submit" name="continueshopping" value="Continue shopping" class="button-2 continue-shopping-button">
+</div></div>
+<div class="cart-footer">
+<div class="totals">
+<div class="total-info">
+<table class="cart-total">
+<tbody>
+<tr>
+<td class="cart-total-left">
+<span class="nobr">Sub-Total:</span>
+</td>
+<td class="cart-total-right">
+<span class="nobr"><span class="product-price">{{sub_total}}</span> </span>
+</td>
+</tr>
+<tr>
+<td class="cart-total-left">
+<span class="nobr">
+Shipping:</span>
+</td>
+<td class="cart-total-right">
+<span class="nobr">
+<span class="product-price">0.00
+</span>
+</span>
+</td>
+</tr>
+<tr>
+<td class="cart-total-left">
+<span class="nobr">Tax: </span>
+</td>
+<td class="cart-total-right">
+<span class="nobr"><span class="product-price">0.00</span> </span>
+</td>
+</tr>
+<tr>
+<td class="cart-total-left">
+<span class="nobr">
+Total:</span>
+</td>
+<td class="cart-total-right">
+<span class="nobr">
+<span class="product-price order-total"><strong>{{total}}</strong></span>
+</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="terms-of-service">
+<input id="termsofservice" type="checkbox" name="termsofservice">
+I agree with the terms of service and I adhere to them unconditionally
+</div>
+<div class="checkout-buttons">
+<button type="button" id="checkout" name="checkout" value="checkout" class="button-1 checkout-button"
+  onclick="if (document.getElementById('termsofservice').checked) { location.href = '/onepagecheckout'; } else { document.getElementById('terms-of-service-warning-box').style.display = 'block'; }">
+Checkout
+</button>
+</div>
+<div id="terms-of-service-warning-box" style="display: none"><p>Please accept the terms of service before the next step.</p></div>
+</div>
+</form>
+</div>
+</div>
+</div>

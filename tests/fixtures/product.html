@@ -1,0 +1,44 @@
+<!-- Product details page body, modeled on /141-inch-laptop and /build-your-own-computer. -->
+<div class="page product-details-page">
+<div class="page-body">
+<form action="/{{slug}}" id="product-details-form" method="post">
+<div itemscope itemtype="http://schema.org/Product" data-productid="{{id}}">
+<div class="product-essential">
+<div class="gallery"><div class="picture"></div></div>
+<div class="overview">
+<div class="product-name">
+<h1 itemprop="name">
+{{title}}
+</h1>
+</div>
+<div class="short-description">{{title}} short description</div>
+<!--product SKU, manufacturer part number, stock info-->
+{{stock}}
+<!--attributes-->
+{{attributes}}
+<!--gift card-->
+{{giftcard}}
+<!--price & add to cart-->
+<div class="prices" itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+<div class="product-price">
+<span itemprop="price" class="price-value-{{id}}">
+{{price}}            </span>
+</div>
+</div>
+{{add_to_cart}}
+</div>
+</div>
+<div class="product-collateral">
+<!-- Related products have their own Add to cart buttons; the page objects must ignore them. -->
+<div class="related-products-grid product-grid">
+<div class="item-box"><div class="product-item" data-productid="999">
+<div class="details"><h2 class="product-title"><a href="/related-thing">Related thing</a></h2>
+<div class="add-info"><div class="prices"><span class="price actual-price">1.00</span></div>
+<div class="buttons"><input type="button" value="Add to cart" class="button-2 product-box-add-to-cart-button add-to-cart-button"></div></div>
+</div></div></div>
+</div>
+</div>
+</div>
+</form>
+</div>
+</div>

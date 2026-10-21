@@ -1,0 +1,46 @@
+<!-- /register, its result page and /login, modeled on the live forms (labels, ids, button values). -->
+<!--register-->
+<div class="page registration-page">
+<div class="page-title"><h1>Register</h1></div>
+<div class="page-body">
+<form action="/register" method="post">
+<div class="fieldset"><div class="form-fields">
+<div class="inputs"><label>Gender:</label>
+<div class="gender">
+<input id="gender-male" name="Gender" type="radio" value="M"><label class="forcheckbox" for="gender-male">Male</label>
+<input id="gender-female" name="Gender" type="radio" value="F"><label class="forcheckbox" for="gender-female">Female</label>
+</div></div>
+<div class="inputs"><label for="FirstName">First name:</label><input class="text-box single-line" id="FirstName" name="FirstName" type="text" value=""></div>
+<div class="inputs"><label for="LastName">Last name:</label><input class="text-box single-line" id="LastName" name="LastName" type="text" value=""></div>
+<div class="inputs"><label for="Email">Email:</label><input class="text-box single-line" id="Email" name="Email" type="text" value=""></div>
+<div class="inputs"><label for="Password">Password:</label><input id="Password" name="Password" type="password"></div>
+<div class="inputs"><label for="ConfirmPassword">Confirm password:</label><input id="ConfirmPassword" name="ConfirmPassword" type="password"></div>
+</div></div>
+<div class="buttons"><input type="submit" id="register-button" class="button-1 register-next-step-button" value="Register" name="register-button"></div>
+</form>
+</div>
+</div>
+<!--result-->
+<div class="page registration-result-page">
+<div class="page-title"><h1>Register</h1></div>
+<div class="page-body">
+<div class="result">Your registration completed</div>
+<div class="buttons"><input type="button" class="button-1 register-continue-button" onclick="location.href='/'" value="Continue"></div>
+</div>
+</div>
+<!--login-->
+<div class="page login-page">
+<div class="page-title"><h1>Welcome, Please Sign In!</h1></div>
+<div class="page-body">
+<div class="customer-blocks"><div class="returning-wrapper">
+<form action="/login" method="post">
+<div class="form-fields">
+<div class="inputs"><label for="Email">Email:</label><input autofocus="autofocus" class="email" id="Email" name="Email" type="text" value=""></div>
+<div class="inputs"><label for="Password">Password:</label><input class="password" id="Password" name="Password" type="password"></div>
+<div class="inputs reversed"><input id="RememberMe" name="RememberMe" type="checkbox" value="true"><label for="RememberMe">Remember me?</label></div>
+</div>
+<div class="buttons"><input class="button-1 login-button" type="submit" value="Log in"></div>
+</form>
+</div></div>
+</div>
+</div>

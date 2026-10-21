@@ -1,0 +1,23 @@
+# Install once with: pre-commit install   (run on everything: pre-commit run --all-files)
+exclude: ^reports/  # generated sample run (HTML report, JUnit XML, screenshots)
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: trailing-whitespace
+        exclude: ^tests/fixtures/  # HTML copied from the live shop, kept byte-for-byte
+      - id: end-of-file-fixer
+        exclude: ^tests/fixtures/
+      - id: check-yaml
+      - id: check-toml
+      - id: check-json
+      - id: check-merge-conflict
+      - id: check-added-large-files
+        args: ["--maxkb=600"]
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.17.1  # keep in step with ruff in requirements.lock
+    hooks:
+      - id: ruff-check
+        types_or: [python, pyi]
+      - id: ruff-format
+        types_or: [python, pyi]  # not Markdown: ReadMeAIBugs.md quotes the reviewed code verbatim

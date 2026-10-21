@@ -1,0 +1,26 @@
+<!-- The 'Advanced search' toggle and price range block of the live /search form. -->
+<!--toggle-->
+<div class="inputs reversed">
+  <input id="As" name="As" type="checkbox" value="true"><input name="As" type="hidden" value="false">
+  <label for="As">Advanced search</label>
+</div>
+<!--block-->
+<div class="advanced-search" id="advanced-search-block" style="display: none;">
+  <div class="inputs">
+    <label for="Cid">Category:</label>
+    <select id="Cid" name="Cid"><option selected="selected" value="0">All</option><option value="2">Computers</option></select>
+  </div>
+  <div class="inputs">
+    <label>Price range:</label>
+    <span class="price-range">
+      From <input class="price-from" id="Pf" name="Pf" type="text" value="">
+      to <input class="price-to" id="Pt" name="Pt" type="text" value="">
+    </span>
+  </div>
+  <!--sid-->
+  <div class="inputs reversed">
+    <input id="Sid" name="Sid" type="checkbox" value="true"><input name="Sid" type="hidden" value="false">
+    <label for="Sid">Search In product descriptions</label>
+  </div>
+  <!--/sid-->
+</div>

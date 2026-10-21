@@ -1,0 +1,72 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "shop-e2e-playwright"
+version = "0.1.0"
+description = "Page Object Model e2e automation for the Tricentis Demo Web Shop"
+requires-python = ">=3.11"
+dependencies = [
+    "playwright>=1.49,<2",
+    "allure-pytest>=2.13,<3",
+]
+
+[project.optional-dependencies]
+test = [
+    "pytest>=8,<9",
+    "pytest-playwright>=0.7,<1",
+    "pytest-html>=4,<5",
+    "pytest-xdist>=3.5,<4",
+    "pytest-rerunfailures>=14,<17",
+    "pytest-timeout>=2.3,<3",
+]
+dev = [
+    "ruff>=0.6,<0.18",
+    "mypy>=1.11,<3",
+    "pre-commit>=3.5,<5",
+]
+
+[dependency-groups]
+# Pinned in the lock files so that `pip install -e . --no-deps --no-build-isolation` uses a locked setuptools.
+build = ["setuptools>=68,<81"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = """-ra --strict-markers \
+--screenshot only-on-failure --tracing retain-on-failure --output artifacts/playwright \
+--alluredir artifacts/allure-results \
+--junitxml=artifacts/reports/junit.xml --html=artifacts/reports/report.html --self-contained-html"""
+log_level = "INFO"
+timeout = 300  # pytest-timeout, per test; unit/component tests get 60 s from tests/plugins/markers.py
+markers = [
+    # layer: exactly one per test (enforced by tests/plugins/markers.py; the taxonomy is tests/support/markers.py)
+    "unit: pure Python (price parsing, data cases, config), no network",
+    "component: page objects and workflow against the routed fake shop (tests/component), no network",
+    "e2e: the assignment's full scenario against the live shop",
+    # suite
+    "smoke: the critical e2e case(s), run on every pull request",
+]
+
+[tool.ruff]
+line-length = 120
+target-version = "py311"
+src = ["src", "tests"]
+
+[tool.ruff.format]
+quote-style = "double"
+# Quotes the assignment's code verbatim; reformatting it would change the code under review.
+exclude = ["ReadMeAIBugs.md"]
+
+[tool.ruff.lint]
+select = ["E", "F", "W", "B", "UP", "SIM"]
+
+[tool.mypy]
+python_version = "3.11"
+mypy_path = "src"
+packages = ["shop"]
+ignore_missing_imports = true
+warn_unused_ignores = true
